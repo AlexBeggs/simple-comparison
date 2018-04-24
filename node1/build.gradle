@@ -1,0 +1,13 @@
+apply plugin: 'com.android.application'
+android.packagingOptions {
+  exclude 'app.properties'
+}
+
+dependencies {
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc2'
+    implementation 'com.google.auto.service:auto-service:1.0-rc2'
+    implementation project(':node2a')
+    implementation project(':node2b')
+    implementation project(':node2c')
+    implementation project(':node2d')
+}

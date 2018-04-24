@@ -1,0 +1,17 @@
+android_library(
+	visibility=["//visibility:public"],
+	name="android_debug",
+	srcs=["//node2c:build_config_debug"]+glob(include=["src/main/java/**/*.java"]),
+	deps=["//node3:android_debug","//autodeps/artifact/commons_io_commons_io_jar:jar","//autodeps/artifact/org_apache_commons_commons_lang3_jar:jar"],
+	exports=["//autodeps/artifact/commons_io_commons_io_jar:jar"],
+	custom_package="com.studio.node2c",
+	manifest="src/main/AndroidManifest.xml",
+	exports_manifest=1
+)
+
+genrule(
+	visibility=["//visibility:public"],
+	name="build_config_debug",
+	cmd="echo 'package com.studio.node2c; public class BuildConfig { public static final String APPLICATION_ID = \"com.studio.node2c\"; public static final String BUILD_TYPE = \"debug\"; public static final boolean DEBUG = false; public static final int VERSION_CODE = -1; public static final String VERSION_NAME = \"null\"; }' > $(@)",
+	outs=["build_config_debug/BuildConfig.java"]
+)

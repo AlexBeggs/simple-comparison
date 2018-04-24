@@ -1,0 +1,21 @@
+android_binary(
+	visibility=["//visibility:public"],
+	name="android_debug",
+	srcs=["//node1:build_config_debug"]+glob(include=["src/main/java/**/*.java"]),
+	deps=["//node2a:android_debug","//node2b:android_debug","//node2c:android_debug","//node2d:android_debug","//autodeps/artifact/com_google_auto_service_auto_service_jar:jar"],
+	custom_package="com.node1",
+	manifest="src/main/AndroidManifest.xml",
+	manifest_merger="android",
+	manifest_values={'applicationId': 'com.node1', 'minSdkVersion': '21'},
+	multidex="native",
+	dex_shards=25,
+	resource_files=glob(include=["src/main/res/**/*"]),
+	plugins=["//autodeps/artifact/com_google_auto_service_auto_service_jar:plugin"]
+)
+
+genrule(
+	visibility=["//visibility:public"],
+	name="build_config_debug",
+	cmd="echo 'package com.node1; public class BuildConfig { public static final String APPLICATION_ID = \"com.node1\"; public static final String BUILD_TYPE = \"debug\"; public static final boolean DEBUG = false; public static final int VERSION_CODE = 1; public static final String VERSION_NAME = \"1.0.0\"; }' > $(@)",
+	outs=["build_config_debug/BuildConfig.java"]
+)

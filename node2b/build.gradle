@@ -1,0 +1,9 @@
+apply plugin: 'com.android.library'
+
+dependencies {
+      api 'commons-io:commons-io:2.6'
+      implementation 'org.apache.commons:commons-lang3:3.7'
+
+      implementation project(':node3')
+
+}
