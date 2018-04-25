@@ -17,7 +17,7 @@ Call the following script.  This will clone the forked [gradle-profiler](https:/
 
 [./benchmark.sh](benchmark.sh)
 
-The scenarios are defined in the performance.scenarios.
+The scenarios are defined in the [performance.scenarios](performance.scenarios).
 
 #### Output:
 
