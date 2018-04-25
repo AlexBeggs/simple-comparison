@@ -12,8 +12,10 @@ fi
 
 targets="abiChangeWithLeafLocalCache abiChangeWithRootLocalCache androidManifestChangeWithLeafLocalCache androidManifestChangeWithRootLocalCache androidResourceChangeWithLeafLocalCache androidResourceChangeWithRootLocalCache cleanWithColdLocalCache nonAbiChangeWithLeafLocalCache nonAbiChangeWithRootLocalCache"
 timestampDir=$(date +"%Y%m%d_%H%M%S")
+outputDir=output/$timestampDir
 iterations=10
 warmups=6
 
-./gradle-profiler --benchmark $targets --iterations=$iterations --warmups=$warmups --output-dir=output/$timestampDir
-./gradle-profiler --benchmark --bazel $targets --iterations=$iterations --warmups=$warmups --output-dir=output/$timestampDir
+echo "Exporting benchmark data to $outputDir"
+./gradle-profiler --benchmark $targets --iterations=$iterations --warmups=$warmups --output-dir=$outputDir
+./gradle-profiler --benchmark --bazel $targets --iterations=$iterations --warmups=$warmups --output-dir=$outputDir
