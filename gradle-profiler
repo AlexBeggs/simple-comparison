@@ -3,6 +3,7 @@
 GRADLE_PROFILER_HOME=~/.gradle-profiler
 
 if test -d $GRADLE_PROFILER_HOME && git -C $GRADLE_PROFILER_HOME status > /dev/null ; then
+  echo "gradle-profiler at $GRADLE_PROFILER_HOME already exists, attempting to update"
   git -C $GRADLE_PROFILER_HOME pull
 else
   echo "Cloning gradle-profiler to $GRADLE_PROFILER_HOME"
