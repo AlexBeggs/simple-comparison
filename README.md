@@ -13,7 +13,7 @@ The following need to be installed and in the path
 
 #### Execution:
 
-Call the following script.  This will clone the forked [gradle-profiler](https://github.com/sunyal/gradle-profiler) that provides additional execution options for Bazel benchmarking.
+Call the following script.  It will clone the forked [gradle-profiler](https://github.com/sunyal/gradle-profiler) to the default location of `~/.gradle-profiler`.  The fork provides additional execution options for Bazel benchmarking.  The clone location can be overridden in the `benchmark.sh` script.  
 
 [./benchmark.sh](benchmark.sh)
 
