@@ -1,0 +1,171 @@
+################################################################################
+# Local Cache - Cold Only
+################################################################################
+cleanWithColdLocalCache {
+  tasks = [":node1:assembleDebug"]
+  clear-build-cache-before = BUILD
+  cleanup-tasks = ["clean"]
+  bazel {
+    targets = ["//node1:android_debug"]
+    commands = ["build", "--spawn_strategy=standalone"]
+    clean-build-before = [
+      {
+        schedule = SCENARIO
+        commands = ["bazel","clean", "--expunge"]
+      },
+      {
+        schedule = BUILD
+        commands = ["bazel","clean"]
+      }
+    ]
+  }
+}
+
+################################################################################
+# ABI Leaf, Local Cache
+################################################################################
+abiChangeWithLeafLocalCache {
+  tasks = [":node1:assembleDebug"]
+  apply-abi-change-to = "node5/src/main/java/com/studio/node5/Thing.java"
+  clear-build-cache-before = SCENARIO
+  bazel {
+        targets = ["//node1:android_debug"]
+        commands = ["build", "--spawn_strategy=standalone"]
+        clean-build-before = [
+          {
+            schedule = SCENARIO
+            commands = ["bazel","clean", "--expunge"]
+          }
+        ]
+  }
+}
+
+################################################################################
+# ABI Root, Local Cache
+################################################################################
+abiChangeWithRootLocalCache {
+  tasks = [":node1:assembleDebug"]
+  apply-abi-change-to = "node1/src/main/java/com/studio/node1/LoginActivity.java"
+  clear-build-cache-before = SCENARIO
+  bazel {
+        targets = ["//node1:android_debug"]
+        commands = ["build", "--spawn_strategy=standalone"]
+        clean-build-before = [
+          {
+            schedule = SCENARIO
+            commands = ["bazel","clean", "--expunge"]
+          }
+        ]
+  }
+}
+
+################################################################################
+# non-ABI Leaf, Local Cache
+################################################################################
+nonAbiChangeWithLeafLocalCache {
+  tasks = [":node1:assembleDebug"]
+  apply-non-abi-change-to = "node5/src/main/java/com/studio/node5/Thing.java"
+  clear-build-cache-before = SCENARIO
+  bazel {
+        targets = ["//node1:android_debug"]
+        commands = ["build", "--spawn_strategy=standalone"]
+        clean-build-before = [
+          {
+            schedule = SCENARIO
+            commands = ["bazel","clean", "--expunge"]
+          }
+        ]
+  }
+}
+
+################################################################################
+# non-ABI Root, Local Cache
+################################################################################
+nonAbiChangeWithRootLocalCache {
+  tasks = [":node1:assembleDebug"]
+  apply-non-abi-change-to = "node1/src/main/java/com/studio/node1/LoginActivity.java"
+  clear-build-cache-before = SCENARIO
+  bazel {
+        targets = ["//node1:android_debug"]
+        commands = ["build", "--spawn_strategy=standalone"]
+        clean-build-before = [
+          {
+            schedule = SCENARIO
+            commands = ["bazel","clean", "--expunge"]
+          }
+        ]
+  }
+}
+
+################################################################################
+# Resource change Leaf, Local Cache
+################################################################################
+androidResourceChangeWithLeafLocalCache {
+  tasks = [":node1:assembleDebug"]
+  apply-android-resource-change-to = "node5/src/main/res/values/strings.xml"
+  bazel {
+        targets = ["//node1:android_debug"]
+        commands = ["build", "--spawn_strategy=standalone"]
+        clean-build-before = [
+          {
+            schedule = SCENARIO
+            commands = ["bazel","clean", "--expunge"]
+          }
+        ]
+  }
+
+}
+
+################################################################################
+# Resource change Root, Local Cache
+################################################################################
+androidResourceChangeWithRootLocalCache {
+  tasks = [":node1:assembleDebug"]
+  apply-android-resource-change-to = "node1/src/main/res/values/strings.xml"
+  bazel {
+        targets = ["//node1:android_debug"]
+        commands = ["build", "--spawn_strategy=standalone"]
+        clean-build-before = [
+          {
+            schedule = SCENARIO
+            commands = ["bazel","clean", "--expunge"]
+          }
+        ]
+  }
+}
+
+################################################################################
+# Manifest change Leaf, Local Cache
+################################################################################
+androidManifestChangeWithLeafLocalCache {
+  tasks = [":node1:assembleDebug"]
+  apply-android-manifest-change-to = "node5/src/main/AndroidManifest.xml"
+  bazel {
+        targets = ["//node1:android_debug"]
+        commands = ["build", "--spawn_strategy=standalone"]
+        clean-build-before = [
+          {
+            schedule = SCENARIO
+            commands = ["bazel","clean", "--expunge"]
+          }
+        ]
+  }
+}
+
+################################################################################
+# Manifest change Root, Local Cache
+################################################################################
+androidManifestChangeWithRootLocalCache {
+  tasks = [":node1:assembleDebug"]
+  apply-android-manifest-change-to = "node1/src/main/AndroidManifest.xml"
+  bazel {
+        targets = ["//node1:android_debug"]
+        commands = ["build", "--spawn_strategy=standalone"]
+        clean-build-before = [
+          {
+            schedule = SCENARIO
+            commands = ["bazel","clean", "--expunge"]
+          }
+        ]
+  }
+}
