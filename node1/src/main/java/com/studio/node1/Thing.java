@@ -1,4 +1,4 @@
-package com.node1;
+package com.studio.node1;
 
 import org.apache.commons.io.FileUtils;
 

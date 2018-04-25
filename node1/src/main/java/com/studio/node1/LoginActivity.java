@@ -1,4 +1,4 @@
-package com.node1;
+package com.studio.node1;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -60,7 +60,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private View mProgressView;
 
       private View mLoginFormView;
-      private com.node1.Thing oleometerThing;
+      private com.studio.node1.Thing oleometerThing;
 
 
     @Override
