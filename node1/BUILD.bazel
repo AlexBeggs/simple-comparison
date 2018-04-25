@@ -3,7 +3,7 @@ android_binary(
 	name="android_debug",
 	srcs=["//node1:build_config_debug"]+glob(include=["src/main/java/**/*.java"]),
 	deps=["//node2a:android_debug","//node2b:android_debug","//node2c:android_debug","//node2d:android_debug","//autodeps/artifact/com_google_auto_service_auto_service_jar:jar"],
-	custom_package="com.node1",
+	custom_package="com.studio.node1",
 	manifest="src/main/AndroidManifest.xml",
 	manifest_merger="android",
 	manifest_values={'applicationId': 'com.node1', 'minSdkVersion': '21'},
