@@ -1,0 +1,7 @@
+java_import(
+	visibility=["//visibility:public"],
+	deps=["//autodeps/artifact/org_reactivestreams_reactive_streams_jar:jar"],
+	name="jar",
+	jars=["artifact_2.1.12.jar"]
+)
+

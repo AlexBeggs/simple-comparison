@@ -1,0 +1,7 @@
+java_import(
+	visibility=["//visibility:public"],
+	deps=["//autodeps/artifact/com_squareup_okhttp3_okhttp_jar:jar"],
+	name="jar",
+	jars=["artifact_2.3.0.jar"]
+)
+

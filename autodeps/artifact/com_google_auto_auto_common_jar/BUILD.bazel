@@ -1,0 +1,7 @@
+java_import(
+	visibility=["//visibility:public"],
+	deps=["//autodeps/artifact/com_google_guava_guava_jar:jar"],
+	name="jar",
+	jars=["artifact_0.3.jar"]
+)
+

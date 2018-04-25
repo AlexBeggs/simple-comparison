@@ -1,0 +1,7 @@
+aar_import(
+	visibility=["//visibility:public"],
+	deps=["//autodeps/artifact/com_android_support_support_compat_aar:aar","//autodeps/artifact/com_android_support_support_media_compat_aar:aar","//autodeps/artifact/com_android_support_support_core_utils_aar:aar","//autodeps/artifact/com_android_support_support_core_ui_aar:aar","//autodeps/artifact/com_android_support_support_fragment_aar:aar"],
+	name="aar",
+	aar="artifact_25.1.0.aar"
+)
+

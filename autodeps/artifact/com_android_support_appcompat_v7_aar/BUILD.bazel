@@ -1,0 +1,7 @@
+aar_import(
+	visibility=["//visibility:public"],
+	deps=["//autodeps/artifact/com_android_support_support_annotations_jar:jar","//autodeps/artifact/com_android_support_support_v4_aar:aar","//autodeps/artifact/com_android_support_support_vector_drawable_aar:aar","//autodeps/artifact/com_android_support_animated_vector_drawable_aar:aar"],
+	name="aar",
+	aar="artifact_25.1.0.aar"
+)
+

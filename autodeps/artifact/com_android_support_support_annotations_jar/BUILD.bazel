@@ -1,0 +1,6 @@
+java_import(
+	visibility=["//visibility:public"],
+	name="jar",
+	jars=["artifact_25.1.0.jar"]
+)
+

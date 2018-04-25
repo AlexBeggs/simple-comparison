@@ -1,0 +1,7 @@
+java_import(
+	visibility=["//visibility:public"],
+	deps=["//autodeps/artifact/com_squareup_okio_okio_jar:jar"],
+	name="jar",
+	jars=["artifact_3.8.0.jar"]
+)
+

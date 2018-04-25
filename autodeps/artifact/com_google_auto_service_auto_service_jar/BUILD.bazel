@@ -1,0 +1,12 @@
+java_import(
+	visibility=["//visibility:public"],
+	deps=["//autodeps/artifact/com_google_auto_auto_common_jar:jar"],
+	name="jar",
+	jars=["artifact_1.0-rc2.jar"]
+)
+
+java_plugin(
+	visibility=["//visibility:public"],
+	deps=["//autodeps/artifact/com_google_auto_auto_common_jar:jar"],
+	name="plugin"
+)

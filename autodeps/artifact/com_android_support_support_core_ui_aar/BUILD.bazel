@@ -1,0 +1,6 @@
+aar_import(
+	visibility=["//visibility:public"],
+	name="aar",
+	aar="artifact_25.1.0.aar"
+)
+
