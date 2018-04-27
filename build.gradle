@@ -9,8 +9,10 @@ buildscript {
     }
 
     dependencies {
+        classpath ('com.uber:okbuck:0.37.2') {
+          exclude module: 'gradle'
+        }
         classpath 'com.android.tools.build:gradle:3.1.1'
-        // classpath "com.spotify.gradle:gradle-bazel:1.4.3-SNAPSHOT"
         classpath "com.gradle:build-scan-plugin:1.12.1"
     }
 }
