@@ -1,3 +1,5 @@
+benchmark-out
+benchmarks
 output
 gradle_build
 bazel-bin

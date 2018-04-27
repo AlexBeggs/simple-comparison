@@ -119,3 +119,31 @@ def addCommonConfigurationForAndroidModules(Project project) {
 
 }
 
+apply plugin: 'com.uber.okbuck'
+okbuck {
+    target = "android-${config.build.compileSdkVersion}"
+    buildToolVersion = config.build.buildToolsVersion
+    resourceUnion = false
+    lint {
+      disabled = true
+    }
+}
+
+def ENTRIES_TO_DELETE = [
+    'LICENSE.txt',
+    'LICENSE',
+    'NOTICE',
+    'asm-license.txt',
+].join(" ")
+def ARCHIVES = [
+    '.okbuck/cache/org.hamcrest.hamcrest-core-1.3.jar',
+    '.okbuck/cache/org.hamcrest.hamcrest-library-1.3.jar',
+    '.okbuck/cache/org.hamcrest.hamcrest-integration-1.3.jar',
+    '.okbuck/cache/org.mockito.mockito-core-1.10.19.jar',
+    '.okbuck/cache/org.assertj.assertj-core-1.7.1.jar',
+]
+gradle.buildFinished {
+    ARCHIVES.each { archive ->
+        "zip -d ${archive} ${ENTRIES_TO_DELETE}".execute().waitFor()
+    }
+}
