@@ -6,9 +6,13 @@ Simple project that contains a short set of dependent modules in order to compar
 - Install Android SDK
 - set environment variable ANDROID_HOME
 - If necessary, override the default `~/.gradle-profiler` local directory in the [gradle-profiler](gradle-profiler) script
+- Install Buck using [OkBuck](https://github.com/uber/okbuck)
+  - `./gradlew :buckwrapper`
+  - `./buckw`
 
 The following need to be installed and in the path
 - Bazel
+- Buck
 - Git
 - Java
 
