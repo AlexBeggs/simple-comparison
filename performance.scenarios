@@ -10,11 +10,11 @@ cleanWithColdLocalCache {
     clean-build-before = [
       {
         schedule = SCENARIO
-        commands = ["buck", "clean"]
+        commands = ["./buckw", "clean"]
       },
       {
         schedule = BUILD
-        commands = ["buck", "clean"]
+        commands = ["./buckw", "clean"]
       }
     ]
   }
@@ -46,7 +46,7 @@ abiChangeWithLeafLocalCache {
     clean-build-before = [
       {
         schedule = SCENARIO
-        commands = ["buck", "clean"]
+        commands = ["./buckw", "clean"]
       }
     ]
   }
@@ -74,7 +74,7 @@ abiChangeWithRootLocalCache {
     clean-build-before = [
       {
         schedule = SCENARIO
-        commands = ["buck", "clean"]
+        commands = ["./buckw", "clean"]
       }
     ]
   }
@@ -102,7 +102,7 @@ nonAbiChangeWithLeafLocalCache {
     clean-build-before = [
       {
         schedule = SCENARIO
-        commands = ["buck", "clean"]
+        commands = ["./buckw", "clean"]
       }
     ]
   }
@@ -130,7 +130,7 @@ nonAbiChangeWithRootLocalCache {
     clean-build-before = [
       {
         schedule = SCENARIO
-        commands = ["buck", "clean"]
+        commands = ["./buckw", "clean"]
       }
     ]
   }
@@ -157,7 +157,7 @@ androidResourceChangeWithLeafLocalCache {
     clean-build-before = [
       {
         schedule = SCENARIO
-        commands = ["buck", "clean"]
+        commands = ["./buckw", "clean"]
       }
     ]
   }
@@ -185,7 +185,7 @@ androidResourceChangeWithRootLocalCache {
     clean-build-before = [
       {
         schedule = SCENARIO
-        commands = ["buck", "clean"]
+        commands = ["./buckw", "clean"]
       }
     ]
   }
@@ -212,7 +212,7 @@ androidManifestChangeWithLeafLocalCache {
     clean-build-before = [
       {
         schedule = SCENARIO
-        commands = ["buck", "clean"]
+        commands = ["./buckw", "clean"]
       }
     ]
   }
@@ -239,7 +239,7 @@ androidManifestChangeWithRootLocalCache {
     clean-build-before = [
       {
         schedule = SCENARIO
-        commands = ["buck", "clean"]
+        commands = ["./buckw", "clean"]
       }
     ]
   }
